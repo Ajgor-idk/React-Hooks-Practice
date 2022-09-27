@@ -43,3 +43,9 @@
    2.2 The second option is that we want to select a HTML element/DOM node (Similar to querySelector in JS.) and later we want to make operations on it like focus it we can make a Ref (Reference if it's not that clear) on it and just whatever we want and that's our second use.
 
 3. Important thing is not to overuse this hook, because it can be problematic later when we'll want to pass some value and then reload component it's not gonna be possible, because the value's gonna disappear and we gonna have bugs. So better stick to useState Hook and use this one responsibly
+
+## UseMemo Hook
+
+1. This nice hook caches the value so it doesn't have to recompute it every time component renders it just checks if the value is the same and only if it's not then it renders it again. You can use it when you have really slow functions and you don't want them to run every time something rerenders so we give the list of dependencies to the hook and place the functions there and when one of those dependencies changes then anything that is in the useMemo will be reruned.
+
+2. Other time we want to use it is when we compare some object. The important thing is that in JS we have something like referencial eqality. What it means is that when we have two "same" objects (e.g. const dog = { color: brown } and const dog2 = { color: brown }) you see they're the same, but in JS they're not. The reason is they just look the same for us, but JS doesn't compare its content is just compares the reference place in memory and if it's not the same that's just a different object. So when we have that in mind we just need to wrap and return the obj in useMemo so when something in component where we use that obj changes Memo compares its content to the memorized one and determines if its need to be rerendered or not. Thanks to that we don't rerender the obj that doesn;t change, but requires our memory to render increasing app speed.

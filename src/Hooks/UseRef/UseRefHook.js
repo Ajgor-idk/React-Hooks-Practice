@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
-export default function UseRefHook() {
+export function UseRefHook() {
   const [name, setName] = useState("");
   const prevName = useRef();
 
