@@ -14,7 +14,7 @@
 
 3. Remeber about wise selection of when we want to change something in the second param in the hook itself.
 
-##UseContext Hook
+## UseContext Hook
 
 1. Quick explanation what is what:
 
@@ -31,3 +31,15 @@
 3. The ClassContext is nice, but not that useful. Good to remeber how it was done, because you know why it done some other way today though.
 
 4. To have deeper understanding this will require some more of examples, but you can get an idea.
+
+## UseRef Hook
+
+1. This hooks is really similar to the useState Hook. The main difference is that it doesn't reload our component once updated. It's a big deal, because we can store our previous values or a selected values without unnecessary component reload.
+
+2. As mentioned above the main thing is to not reload the component, but why we want to do that?
+
+   2.1 The first option is that we want to store some previous value and we can do it in the state, but it's a problem because when the component reloads it's gonna store the value again and it's gonna reload and it's gonna store the value again and it's gonna reload and so on and so on. Sooo we want to have it without the reload part. The useRef is totally separate from our component render cycle so we can change it how much we want it's not gonna render and cause the infinite loop and that's our first use.
+
+   2.2 The second option is that we want to select a HTML element/DOM node (Similar to querySelector in JS.) and later we want to make operations on it like focus it we can make a Ref (Reference if it's not that clear) on it and just whatever we want and that's our second use.
+
+3. Important thing is not to overuse this hook, because it can be problematic later when we'll want to pass some value and then reload component it's not gonna be possible, because the value's gonna disappear and we gonna have bugs. So better stick to useState Hook and use this one responsibly
