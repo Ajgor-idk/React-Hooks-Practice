@@ -4,6 +4,7 @@ import { UseEffectHook } from "./Hooks/UseEffect/UseEffectHook.js";
 import { UseContextHook } from "./Hooks/UseContext/UseContextHook.js";
 import { UseRefHook } from "./Hooks/UseRef/UseRefHook.js";
 import { UseMemoHook } from "./Hooks/UseMemo/UseMemoHook.js";
+import { UseCallbackHook } from "./Hooks/UseCallback/UseCallbackHook.js";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       {/* <UseEffectHook /> */}
       {/* <UseContextHook /> */}
       {/* <UseRefHook /> */}
-      <UseMemoHook />
+      {/* <UseMemoHook /> */}
+      <UseCallbackHook />
     </>
   );
 }
