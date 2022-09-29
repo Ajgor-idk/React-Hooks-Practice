@@ -61,6 +61,9 @@
 ## UseReducer Hook
 
 1. UseReducer Hook is complicated. That has to adressed from the start, but it's really useful. We just need to use it in bigger apps. The reason why is in the small projects it just doesn't make any sense to use that. You can see the code files and it's pretty big. Although the code would've been bigger if we wanted to have more funcionalites such as editing, changing the text etc. So when we use that hook we can easily add all of our options to the dispatch and clean up a bit all those props that would've been used with handleSth or something like that. I don't think there is much more to it's theory you just need to use it a bit and try to do some other things with it and it's gonna be much better and not even that hard. The most important are:
+
    1.1 reducer - a place with all the functions and cases for them of which you want to use.
+
    1.2 dispatch - you call dispatch to call the reducer passed in UseReducer as a param. The dispatch is used in a deconstructed array just like in useState. More or less like this (const [todos, dispatch] = useReducer(reducer, []);)
+
    1.3 payload - the param where you just pass all the variables you can have in the fucntions used in reducer.
