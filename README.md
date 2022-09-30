@@ -67,3 +67,11 @@
    1.2 dispatch - you call dispatch to call the reducer passed in UseReducer as a param. The dispatch is used in a deconstructed array just like in useState. More or less like this (const [todos, dispatch] = useReducer(reducer, []);)
 
    1.3 payload - the param where you just pass all the variables you can have in the fucntions used in reducer.
+
+## UseTransition Hook
+
+1. Good to know hook, while having preformance issues. The key to use is it's simple you just say the transition start and tha's that. The important thing to remember is to use it if really needed. The main concept of React is to take all of the state changes and make a one call then rerender everything what's needs to be rerendered. When we have something that lowers our performence we can degrade it to low priority state change and it will be done after everything else is done. We have that in our example. We first do the state change in our input and make it visible right after typing then we are processing the appeding of the list.
+
+2. Why not to use it all the time then? The main reason is when we have small application and small state changes we just let the React handle it like it should, because we can slow our app down more than before the use of it. When we have the high priority state changes we just make them one after another and the startTransition is the second call to process whatever is in it. So we end up in making two calls rather than one and that's just useless on a small scale, because like I said it's just gonna be slower so we just let the React handle it with ease.
+
+3. The good use case for it is when we want to add on something like our big list a loading state. We can do it by making a loading component and then use isPending that is given in our hook.
