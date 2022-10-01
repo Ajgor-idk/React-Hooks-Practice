@@ -85,3 +85,12 @@
 1. This hook works pretty easily. It works just like a useEffect hook, but the useEffect hook is asynchronous meanwhile our useLayoutEffect hook is synchronous, which means it works and uploads with every other component by default and it doesn't compute everything in the background like asynchronous functions does.
 
 2. The use case I think is self explanatory. We use it when we want to change something in the layout of our DOM document. We do that so we don't have some wierd effects while manipulating in when the user is seeing it. So while doing something that user can see try to use useEffect but when something wierd happends tru useLayoutEffect.
+
+
+## UseDebugValue Hook
+
+1. The most important thing is this hook is for custom hooks only if we're gonna try to use it in the App.js or sth like that it's just not going to work. Another imporant thing is that we should have an extension in our browser (react devtools) for this to work nicely.
+
+2. The use case of it is when we just want to see some value in our devtools from our custom hook like from where it's from (maybe it's a state maybe it's frm useEffect) and what's the value itself etc.
+
+3. When we use it we need to be careful about checking the values from the slow functions. It's just gonna load eachtime we get it and it lowers our performence. The solution to that is to give it a second parameter. We need to give it a fuction with value we want to give to it and it says that is just to be computed when we're in our devtools and are checking those values. It should look something liek that: useDebugValue(value, value => slowFunction(value)).
