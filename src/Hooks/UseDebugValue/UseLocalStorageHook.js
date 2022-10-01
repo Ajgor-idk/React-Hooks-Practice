@@ -1,9 +1,12 @@
-import React, { useCallback, useDebugValue, useEffect, useState } from "react";
+import { useCallback, useDebugValue, useEffect, useState } from "react";
 
 export function useLocalStorage(key, defaultValue) {
   const [value, setValue] = useState(() => {
     //Some code
   });
+
+  //Just to make a caution alert go away
+  const localStorage = null
 
   //It's gonna be in an array and we can make/pass objects here too
   useDebugValue(value, key);
