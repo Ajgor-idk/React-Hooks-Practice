@@ -79,3 +79,9 @@
 ## UseDiferredValue Hook
 
 1. It's really similar to useTransition Hook, but it works for values not functions. It also sets priority and just waits for everything to end so it can update it's value. The React is smart enough to know when to update the value so when nothing is going on it will update it right away, because it has time to do it. However when the high priority value is changing it waits until it's done so it can update it later. Long story short by using this hookl we just say what value we want to update now and what we can update after those other values.
+
+## UseLayoutEffect Hook
+
+1. This hook works pretty easily. It works just like a useEffect hook, but the useEffect hook is asynchronous meanwhile our useLayoutEffect hook is synchronous, which means it works and uploads with every other component by default and it doesn't compute everything in the background like asynchronous functions does.
+
+2. The use case I think is self explanatory. We use it when we want to change something in the layout of our DOM document. We do that so we don't have some wierd effects while manipulating in when the user is seeing it. So while doing something that user can see try to use useEffect but when something wierd happends tru useLayoutEffect.
