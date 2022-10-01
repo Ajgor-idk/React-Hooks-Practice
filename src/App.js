@@ -7,6 +7,7 @@ import { UseMemoHook } from "./Hooks/UseMemo/UseMemoHook.js";
 import { UseCallbackHook } from "./Hooks/UseCallback/UseCallbackHook.js";
 import { UseReducerHook } from "./Hooks/UseReducer/UseReducerHook.js";
 import { UseTransitionHook } from "./Hooks/UseTransition/UseTransitionHook.js";
+import { UseDeferredValueHook } from "./Hooks/UseDeferredValue/UseDeferredValueHook.js";
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
       {/* <UseMemoHook /> */}
       {/* <UseCallbackHook /> */}
       {/* <UseReducerHook /> */}
-      <UseTransitionHook />
+      {/* <UseTransitionHook /> */}
+      <UseDeferredValueHook />
     </>
   );
 }

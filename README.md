@@ -75,3 +75,7 @@
 2. Why not to use it all the time then? The main reason is when we have small application and small state changes we just let the React handle it like it should, because we can slow our app down more than before the use of it. When we have the high priority state changes we just make them one after another and the startTransition is the second call to process whatever is in it. So we end up in making two calls rather than one and that's just useless on a small scale, because like I said it's just gonna be slower so we just let the React handle it with ease.
 
 3. The good use case for it is when we want to add on something like our big list a loading state. We can do it by making a loading component and then use isPending that is given in our hook.
+
+## UseDiferredValue Hook
+
+1. It's really similar to useTransition Hook, but it works for values not functions. It also sets priority and just waits for everything to end so it can update it's value. The React is smart enough to know when to update the value so when nothing is going on it will update it right away, because it has time to do it. However when the high priority value is changing it waits until it's done so it can update it later. Long story short by using this hookl we just say what value we want to update now and what we can update after those other values.
