@@ -9,6 +9,7 @@ import { UseReducerHook } from "./Hooks/UseReducer/UseReducerHook.js";
 import { UseTransitionHook } from "./Hooks/UseTransition/UseTransitionHook.js";
 import { UseDeferredValueHook } from "./Hooks/UseDeferredValue/UseDeferredValueHook.js";
 import { UseLayoutEffecrHook } from "./Hooks/UseLayoutEffect/UseLayoutEffecrHook.js";
+import { UseImperativeHook } from "./Hooks/UseImperative/UseImperativeHook.js";
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
       {/* <UseReducerHook /> */}
       {/* <UseTransitionHook /> */}
       {/* <UseDeferredValueHook /> */}
-      <UseLayoutEffecrHook />
+      {/* <UseLayoutEffecrHook /> */}
+      <UseImperativeHook />
     </>
   );
 }

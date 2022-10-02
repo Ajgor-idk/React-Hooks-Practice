@@ -94,3 +94,9 @@
 2. The use case of it is when we just want to see some value in our devtools from our custom hook like from where it's from (maybe it's a state maybe it's frm useEffect) and what's the value itself etc.
 
 3. When we use it we need to be careful about checking the values from the slow functions. It's just gonna load eachtime we get it and it lowers our performence. The solution to that is to give it a second parameter. We need to give it a fuction with value we want to give to it and it says that is just to be computed when we're in our devtools and are checking those values. It should look something liek that: useDebugValue(value, value => slowFunction(value)).
+
+## UseImperative Hook
+
+1. We basicly can make our own reference. Sometimes when we do something custom (like custonInput here) we need to make a reference to it. We can do it by using React.forwardRef() and it works just fine, but on the smaller components. When we have multiple funcions inside our custom component we would rather make it nice and clean so we make our own reference and use it how we'd want and need.
+
+2. With our CustomInput we're just doing something small like making an alert or wanting to focus on 1 thing. The good example, however is with the modal. Modal example is good because it's clear to see and complex enough for it to work. When we have multiple button in our modal for each one of them we would need to make a reference and maybe even a state, but with help of our hook you can see how easy it is to do.
