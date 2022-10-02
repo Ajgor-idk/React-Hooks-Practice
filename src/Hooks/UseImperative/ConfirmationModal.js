@@ -9,8 +9,8 @@ function ConfirmationModal({ isOpen, onClose }, ref) {
     () => {
       return {
         focusCloseBtn: () => closeRef.current.focus(),
-        focusCloseBtn: () => denyRef.current.focus(),
-        focusCloseBtn: () => confirmRef.current.focus(),
+        focusDenyBtn: () => denyRef.current.focus(),
+        focusConfirmBtn: () => confirmRef.current.focus(),
       };
     },
     []
