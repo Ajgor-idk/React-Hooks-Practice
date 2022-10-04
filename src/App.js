@@ -11,7 +11,7 @@ import { UseDeferredValueHook } from "./Hooks/UseDeferredValue/UseDeferredValueH
 import { UseLayoutEffecrHook } from "./Hooks/UseLayoutEffect/UseLayoutEffecrHook.js";
 import { UseImperativeHook } from "./Hooks/UseImperative/UseImperativeHook.js";
 import { UseIdHook } from "./Hooks/UseId/UseIdHook.js";
-import { LocalStorageHook } from "./CustomHooks/Session1/Session1Hooks.js";
+import { Session1Hooks } from "./CustomHooks/Session1/Session1Hooks.js";
 
 function App() {
   return (
@@ -28,7 +28,7 @@ function App() {
       {/* <UseLayoutEffecrHook /> */}
       {/* <UseImperativeHook /> */}
       {/* <UseIdHook /> */}
-      <LocalStorageHook />
+      <Session1Hooks />
     </>
   );
 }
