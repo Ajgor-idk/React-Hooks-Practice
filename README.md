@@ -107,3 +107,19 @@
 2. This hook also make you do good practices. When you'd like to try to select an element by an id you will be unable to do it, because it starts with colon and it's just impossible. So if you want to select anything you need to use useRef to be able to as React suggests you to do it that way.
 
 3. Also worth mentioning the solution to making multiple ids on the same component. We just make it the same id with something added to it so it's more readable and we don't catch any errors. I just really like the design of this and I thought it's worth mentioning.
+
+# Custom Hooks Practice
+
+## Session1
+
+1. Custom hooks have an easy concept, but they can be hard to make depends on what you want them to do. The concept is to shorten the long/complex code that does someting into a hook so the code will be more readable and we can you it in many places.
+
+2. The imporatnt thing is to remember how to name them. The only thing is to add use before the name of the hook. After that React will know it's a custom hook and will treat it that way.
+
+3. We made two custom hooks here. First is a useLocalStorage and second is useUpdateLogger.
+
+   3.1 The first one is a bit more complex than the second one, but the main function of it is to get and update data in our local storge. We can use it just like useState but we had to modify it by having two parameters to give to the function ratther than one like in useState.
+
+   3.2 The second one is just a simple logger that logs our value in the console.
+
+The main power of custom hooks is that we can make whatever we want as you see. Thanks to that our code will be simpler and cleaner, but still functional just as we wish.
