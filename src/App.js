@@ -10,6 +10,7 @@ import { UseTransitionHook } from "./Hooks/UseTransition/UseTransitionHook.js";
 import { UseDeferredValueHook } from "./Hooks/UseDeferredValue/UseDeferredValueHook.js";
 import { UseLayoutEffecrHook } from "./Hooks/UseLayoutEffect/UseLayoutEffecrHook.js";
 import { UseImperativeHook } from "./Hooks/UseImperative/UseImperativeHook.js";
+import { UseIdHook } from "./Hooks/UseId/UseIdHook.js";
 
 function App() {
   return (
@@ -24,7 +25,8 @@ function App() {
       {/* <UseTransitionHook /> */}
       {/* <UseDeferredValueHook /> */}
       {/* <UseLayoutEffecrHook /> */}
-      <UseImperativeHook />
+      {/* <UseImperativeHook /> */}
+      <UseIdHook />
     </>
   );
 }

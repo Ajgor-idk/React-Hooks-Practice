@@ -86,7 +86,6 @@
 
 2. The use case I think is self explanatory. We use it when we want to change something in the layout of our DOM document. We do that so we don't have some wierd effects while manipulating in when the user is seeing it. So while doing something that user can see try to use useEffect but when something wierd happends tru useLayoutEffect.
 
-
 ## UseDebugValue Hook
 
 1. The most important thing is this hook is for custom hooks only if we're gonna try to use it in the App.js or sth like that it's just not going to work. Another imporant thing is that we should have an extension in our browser (react devtools) for this to work nicely.
@@ -100,3 +99,11 @@
 1. We basicly can make our own reference. Sometimes when we do something custom (like custonInput here) we need to make a reference to it. We can do it by using React.forwardRef() and it works just fine, but on the smaller components. When we have multiple funcions inside our custom component we would rather make it nice and clean so we make our own reference and use it how we'd want and need.
 
 2. With our CustomInput we're just doing something small like making an alert or wanting to focus on 1 thing. The good example, however is with the modal. Modal example is good because it's clear to see and complex enough for it to work. When we have multiple button in our modal for each one of them we would need to make a reference and maybe even a state, but with help of our hook you can see how easy it is to do.
+
+## UseId Hook
+
+1. Great hook to sort all the problems with dynamic ids. The main use is when you do server rendering and client side hudration so they can communicate freely. Why not use math.random()? Because we won't have the same ids with math.random on the client side as well as on the server side so they cannot communicate. With useId the generated id is the same as long as everything on page starys the same.
+
+2. This hook also make you do good practices. When you'd like to try to select an element by an id you will be unable to do it, because it starts with colon and it's just impossible. So if you want to select anything you need to use useRef to be able to as React suggests you to do it that way.
+
+3. Also worth mentioning the solution to making multiple ids on the same component. We just make it the same id with something added to it so it's more readable and we don't catch any errors. I just really like the design of this and I thought it's worth mentioning.
