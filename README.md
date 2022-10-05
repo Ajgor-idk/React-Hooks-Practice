@@ -123,3 +123,21 @@
    3.2 The second one is just a simple logger that logs our value in the console.
 
 The main power of custom hooks is that we can make whatever we want as you see. Thanks to that our code will be simpler and cleaner, but still functional just as we wish.
+
+## Session 2
+
+1. In useArray we're mostly trying to make the hook that have simple array function so we don't have to worry about working on array itself everytime we want to do something on it. As you can see there's a bit of code there, but it only looks scary at the first glance if you'll read it it's pretty simple to understand. Basically we closed up all the array spreading and state updating there so we can have simple and clear functions.
+
+2. I'm gonna make it a bit out of order, because we need useTimeout in useDebounce hook. So in useTimeout hook we want to set a certain timeout also I added some functions to manipulate that timeout if we need to. The hook takes what we want to do (callback) and after what time we want to do it (delay). I think it simple how timeout works so I'm gonna fouces more on our functions. We have three functions there: set, clear and reset.
+
+   2.1 Our set sets our timeout reference whenever the delay changes updating our callback and making a new timeout.
+
+   2.2 Our clear clears our timeout so it won't do anything anymore after we use it.
+
+   2.3 Our reset clears our timeout with clear fn and sets new timeout with set fn.
+
+3. In useDebouce we wanted to make a component update after certain amount of time. That practically what debounce means. So we just made a simple hook that takes: what we want to do (callback), how long we want to wait (delay) and on which values change we want it to update (dependencies). After we provide that the hook takes the values uses our previous hook (useTimeout) and after that time it resets and makes our callback again.
+
+4. In useToggle we just toggle the boolean after providing some value. We also guaranteed that when the value isn't a boolean we just convert it into one. Then we return the value and the function so we can use it in our component.
+
+5. In useUpdateEffect we wanted to work just like useEffect, but without the effect being activating on the first load. The hook needs to get a callback function and a list of dependencies. After we provide it then we can check if it's our first load. We just make a quick reference and set it to false by default so the useEffect won't fire up and than after loading we set it to true. After that the useEffect works just like it should.
