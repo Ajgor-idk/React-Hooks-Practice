@@ -13,6 +13,7 @@ import React from "react";
 // import { UseIdHook } from "./Hooks/UseId/UseIdHook.js";
 // import { Session1Hooks } from "./CustomHooks/Session1/Session1Hooks.js";
 // import Session2Hooks from "./CustomHooks/Session2/Session2Hooks.js";
+import { Session3Hooks } from "./CustomHooks/Session3/Session3Hooks";
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
       {/* <UseIdHook /> */}
       {/* <Session1Hooks /> */}
       {/* <Session2Hooks /> */}
+      <Session3Hooks />
     </>
   );
 }
