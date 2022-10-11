@@ -4,7 +4,7 @@
 // import { ToggleComponent } from "./useToggle/ToggleComponent";
 // import { UpdateEffectComponent } from "./useUpdateEffect/UpdateEffectComponent";
 
-export default function Session2Hooks() {
+export function Session2Hooks() {
   // return <ArrayComponent />;
   // return <DebounceComponent />;
   // return <TimeoutComponent />;

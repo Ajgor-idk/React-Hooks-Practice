@@ -12,8 +12,9 @@ import React from "react";
 // import { UseImperativeHook } from "./Hooks/UseImperative/UseImperativeHook.js";
 // import { UseIdHook } from "./Hooks/UseId/UseIdHook.js";
 // import { Session1Hooks } from "./CustomHooks/Session1/Session1Hooks.js";
-// import Session2Hooks from "./CustomHooks/Session2/Session2Hooks.js";
-import { Session3Hooks } from "./CustomHooks/Session3/Session3Hooks";
+// import { Session2Hooks } from "./CustomHooks/Session2/Session2Hooks.js";
+// import { Session3Hooks } from "./CustomHooks/Session3/Session3Hooks";
+// import { Session4Hooks } from "./CustomHooks/Session4/Session4Hooks";
 
 function App() {
   return (
@@ -32,7 +33,8 @@ function App() {
       {/* <UseIdHook /> */}
       {/* <Session1Hooks /> */}
       {/* <Session2Hooks /> */}
-      <Session3Hooks />
+      {/* <Session3Hooks /> */}
+      {/* <Session4Hooks /> */}
     </>
   );
 }
