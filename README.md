@@ -165,3 +165,15 @@ The main power of custom hooks is that we can make whatever we want as you see. 
 4. useScript is also an easy to use hook. We just provide our url and then we make an asynchronous request and we use our previous useAsync hook to see if it's loading, if it has loaded and if it has gotten any errors. If not we make a new promise so we can check if it has loaded we can resolve and if we've got an error we can reject and show it in our document.
 
 5. useWindowSize is pretty self explainatory. It just measures our window and make an object with width and height of it and returns it so we can have those values.
+
+## Session5
+
+1. The useEffectOnce hook is really simple. If you just want to make an element load just once you make this one simple one liner and you're done. The hook just uses the simple useEffect and unchcecks it after a first use so the callback fn won't start anymore.
+
+2. The useGeolocation Hook has many use cases so we can use it anywhere we want to be honest. The hooks structure is plain and simple. We just three states: loading, error and data. Then we use useEffect hook so we can handle diffrent outcomes. On success we set our geolocation,, diable error and finish loading. On error we just set an error and finish loading. And then we just get the current position with the handlers and options if we pass some. At last we create an id so we check if the location of the user changes whenever the option changes and if it does watch position with our hanclers, update it and then dissconect so we don't watch it when we don't have to.
+
+3. The useMediaQuery hook can be useful when we want to do some CSS in React. It provides an option so we can make our components and it contents adapt to the size of the window. We just pass how we want to watch (the break point) and chceck if the size if correct using browser fn (matchMedia). Then we update it using our useEventListener hook so we can check if our window matches each time we change mediaQueryList.
+
+4. The useSize hook is a quick one. We use it to check the size of an element as you could've guessed. We just check if we have a ref if we don't have one we set an observer which checks our parameters and sets them to our size then we disconnect it so it doesn't do it multiple times and return our size.
+
+5. The useStateValidation is a really cool hook which helps us validate stuff in forms for example. We just pass our requierment (function) and initial value. Each time the validation fn changes we just our state that we pass in the callback is a function (and run it if it is) or the value which we return. Then we set our value and check it by running it in our validation function and return the state, the check and if it's valid.

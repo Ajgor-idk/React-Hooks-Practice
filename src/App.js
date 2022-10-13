@@ -15,6 +15,7 @@ import React from "react";
 // import { Session2Hooks } from "./CustomHooks/Session2/Session2Hooks.js";
 // import { Session3Hooks } from "./CustomHooks/Session3/Session3Hooks";
 // import { Session4Hooks } from "./CustomHooks/Session4/Session4Hooks";
+import { Session5Hook } from "./CustomHooks/Session5/Session5Hook";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
       {/* <Session2Hooks /> */}
       {/* <Session3Hooks /> */}
       {/* <Session4Hooks /> */}
+      <Session5Hook />
     </>
   );
 }

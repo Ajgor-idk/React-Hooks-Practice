@@ -8,6 +8,7 @@ export function useEventListener(eventType, callback, element = window) {
   }, [callback]);
 
   useEffect(() => {
+    if (element == null) return;
     const handler = (event) => callbackRef.current(event);
     element.addEventListener(eventType, handler);
 
