@@ -5,7 +5,7 @@ import { EffectOnceComponent } from "./useEffectOnce/EffectOnceComponent";
 // import { SizeComponent } from './useSize/SizeComponent';
 // import { StateValidationComponent } from './useStateValidation/StateValidationComponent';
 
-export function Session5Hook() {
+export function Session5Hooks() {
   return <EffectOnceComponent />
 //   return <GeolocationComponent />
 //   return <MediaQueryComponent />

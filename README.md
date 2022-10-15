@@ -177,3 +177,15 @@ The main power of custom hooks is that we can make whatever we want as you see. 
 4. The useSize hook is a quick one. We use it to check the size of an element as you could've guessed. We just check if we have a ref if we don't have one we set an observer which checks our parameters and sets them to our size then we disconnect it so it doesn't do it multiple times and return our size.
 
 5. The useStateValidation is a really cool hook which helps us validate stuff in forms for example. We just pass our requierment (function) and initial value. Each time the validation fn changes we just our state that we pass in the callback is a function (and run it if it is) or the value which we return. Then we set our value and check it by running it in our validation function and return the state, the check and if it's valid.
+
+## Session6
+
+1. Does not work. The React updates cahnges the basics of the workflow of this hook. I'll try to fix it later.
+
+2. The useDarkMode hook is really common used and it's easy to implement. The hooks works by making a data in localStorage and than toggling it to the users' page body. We initially check users' preference by useMediaQuery and than make a enable value which is the initial user preference if we haven't chanaged the mode or the toggled preference. And each time it changes we toggle the class to the body.
+
+3. The useCopyToClipboard hook is pretty easy. We just set what was copied (value), and if it was successfully copied (success). Then we just make a fn which takes our text and some options and starts the copy fn with the provided parameters. The if we have a result (boolean) from that fn we set our value to that result (so the text that we want) and our success to that result (if it was true or false). Lastly we just retun the fn and the value with the success.
+
+4. The useCookie hook doesn't need much explanation. It works pretty much the same as sessionStorage and localStorage but with cookies. The simplicity of that is thank to the Cookie npm so here we just need to worry about setting it all just like those two I said about earilier.
+
+5. The useTranslations Hook is pretty broad. We start with setting default langs in the localStorage. So the default lang is english and our fallback lang is english. Then we make a translate function which takes the key. We set our key to the keys value and sometimes we don't know if it gonna be a nested value so we just split it with the dot. Then we return the getNestedTranslation fn which takes lang and keys. It return the reduced keys so we get an exact object with our key or just our key each time the translation with lang index changes. long story short getNestedTranslation fn just gives us back the values from our translations which we have in translations folder. Coming back to our translate fn it return the values with our set language and if we don't have those values it gives us back the values from our fallback language and if we don't have those it just returns the key with which we wanted to get the values. Lastly we return all of the langs and options to setting them as well as the translate fn.
