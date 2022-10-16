@@ -16,7 +16,8 @@ import React from "react";
 // import { Session3Hooks } from "./CustomHooks/Session3/Session3Hooks";
 // import { Session4Hooks } from "./CustomHooks/Session4/Session4Hooks";
 // import { Session5Hooks } from "./CustomHooks/Session5/Session5Hooks";
-import { Session6Hooks } from "./CustomHooks/Session6/Session6Hooks";
+// import { Session6Hooks } from "./CustomHooks/Session6/Session6Hooks";
+import { Session7Hooks } from "./CustomHooks/Session7/Session7Hooks";
 
 function App() {
   return (
@@ -38,7 +39,8 @@ function App() {
       {/* <Session3Hooks /> */}
       {/* <Session4Hooks /> */}
       {/* <Session5Hooks /> */}
-      <Session6Hooks />
+      {/* <Session6Hooks /> */}
+      <Session7Hooks />
     </>
   );
 }

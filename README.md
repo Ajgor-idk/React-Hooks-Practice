@@ -124,7 +124,7 @@
 
 The main power of custom hooks is that we can make whatever we want as you see. Thanks to that our code will be simpler and cleaner, but still functional just as we wish.
 
-## Session 2
+## Session2
 
 1. In useArray we're mostly trying to make the hook that have simple array function so we don't have to worry about working on array itself everytime we want to do something on it. As you can see there's a bit of code there, but it only looks scary at the first glance if you'll read it it's pretty simple to understand. Basically we closed up all the array spreading and state updating there so we can have simple and clear functions.
 
@@ -142,7 +142,7 @@ The main power of custom hooks is that we can make whatever we want as you see. 
 
 5. In useUpdateEffect we wanted to work just like useEffect, but without the effect being activating on the first load. The hook needs to get a callback function and a list of dependencies. After we provide it then we can check if it's our first load. We just make a quick reference and set it to false by default so the useEffect won't fire up and than after loading we set it to true. After that the useEffect works just like it should.
 
-## Session 3
+## Session3
 
 1. The useAsync hook can be really often used one. The hooks job is to whether or not something is loading and if the loading succeeded of failed. We do that every time any of our dependencies change.
 
@@ -189,3 +189,22 @@ The main power of custom hooks is that we can make whatever we want as you see. 
 4. The useCookie hook doesn't need much explanation. It works pretty much the same as sessionStorage and localStorage but with cookies. The simplicity of that is thank to the Cookie npm so here we just need to worry about setting it all just like those two I said about earilier.
 
 5. The useTranslations Hook is pretty broad. We start with setting default langs in the localStorage. So the default lang is english and our fallback lang is english. Then we make a translate function which takes the key. We set our key to the keys value and sometimes we don't know if it gonna be a nested value so we just split it with the dot. Then we return the getNestedTranslation fn which takes lang and keys. It return the reduced keys so we get an exact object with our key or just our key each time the translation with lang index changes. long story short getNestedTranslation fn just gives us back the values from our translations which we have in translations folder. Coming back to our translate fn it return the values with our set language and if we don't have those values it gives us back the values from our fallback language and if we don't have those it just returns the key with which we wanted to get the values. Lastly we return all of the langs and options to setting them as well as the translate fn.
+
+## Session7
+
+1. useDebugInformation is a pretty useful debugging tool. it's a bit complicated hook, but it works by taking two properties. First one is componentName which is pretty understandable second one is props which takes our props we were cahnging and we want to know how they changed. We create some variables which can help us provide further information:
+
+   1.1 count - just counts how many times we rendered that component. It's a custom hook so explanation is down there.
+   1.2 changedProps - those are the props that we changed. By default it's an empty obj.
+   1.3 previousProps - our initial props / props before the change.
+   1.4 lastRenderTimestamp - the time we rendered the component.
+
+So then we make a props key so we can have a name of every prop. After that we just make a simple reduce which makes puts all the data that changed in to another obj. We create info variable which is just an organised informations we gathered. Lastly we update everyting put it in the console and return the info to the us.
+
+2. useHover it's really simple hook. It's not useful if you think about it from the CSS point of view, but we don't have to use it for styling we can you it so when we hover over sth we can mount so element or do sth else. It just takes the reference and toggles the state whenever we hover over sth or we leave the area.
+
+3. useLongPress is also simple. It takes the ref and the callback fn and delay optionally. The it just takes the reset and clear fn for the timer. We claer the timer for the first time the hook starts. And lastly we just operate on eventlisteners. So when we press the timer restart and start, but when we leave the area or stop pressing it stops.
+
+4. useOnlineStatus quick hook which toggles the states when the user if online and offline. We can do so interesing effects with that one I think.
+
+5. useRenderCount is a debugging tool also. You can see how it works in the useDebugInformation hook. Basicly it creates ref and each time the component renders it increments so we can see how many times it does and maybe why.
